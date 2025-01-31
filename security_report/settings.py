@@ -57,7 +57,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://def-soc-3mwd.vercel.app",
+    "https://def-soc-gkre.vercel.app",
     "http://localhost:3000"
     ]
 
