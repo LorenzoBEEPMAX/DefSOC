@@ -85,7 +85,7 @@ code {
   height: 100%;
   text-align: center;
   line-height: 20px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   transition: width 0.3s ease-in-out;
 }

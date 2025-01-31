@@ -3,8 +3,8 @@
   "results": [
     {
       "idsummary": "d1923479-e084-4ade-b18c-0c2262b8fb6a",
-      "summary_text": "**Riepilogo Esecutivo della Vulnerabilità per \"cybersonar.demo\"**\n\nIl dominio \"cybersonar.demo\" attualmente presenta una situazione di sicurezza altamente critica, con un punteggio di rischio di 99 su 100, indicando una situazione estremamente pericolosa con multiple vulnerabilità severe, fuga di dati significativa e/o eccessiva esposizione dei servizi. E' richiesta un'azione immediata.\n\n**Vulnerabilità:**\n- Totale vulnerabilità rilevate: 162, con 2 vulnerabilità critiche attive, 18 vulnerabilità passive di alto livello, e una distribuzione varia di vulnerabilità di medio livello (52 totali, di cui 3 attive), e 90 vulnerabilità informative. Non sono state individuate vulnerabilità di basso livello.\n\n**Esposizione dei Servizi:**\n- E' stata identificata un\"esposizione significativa ai servizi attraverso 102 asset totali con 30 indirizzi IPv4 e 23 IPv6 unici. Le porte più esposte comprendono la porta 80 (68 istanze), 443 (42 istanze), nonchè le porte 8800, 53, 6697, 6667, e 8080 con un numero variabile di esposizioni.\n\n**Fuga di Dati:**\n- Le fughe di dati sono sostanziali, con 1 fuga di dati relativa al \"domain_stealer\" non risolta, 826 fughe di dati potenzialmente pericolose (potential_stealer) e 11 altre fughe di dati (other_stealer). Non ci sono fughe di dati VIP o generali rilevate.\n\n**Certificati e Tecnologia:**\n- Sono state riscontrate problematiche relative ai certificati con 15 certificati attivi e 18 scaduti. Questa situazione può comportare rischi aggiuntivi per la sicurezza delle comunicazioni.\n- L'implementazione tecnologica prevede misure di sicurezza quali Web Application Firewall (WAF) su 4 asset, ma nessun Content Delivery Network (CDN) è in uso, aumentando l'esposizione agli attacchi DDoS e ad altre minacce internet.\n\n**Sicurezza Email:**\n- La sicurezza email è vulnerabile allo spoofing, nonostante la politica DMARC sia impostata su \"quarantena\". Non sono state rilevate presenze in blacklist.\n\nLa combinazione delle vulnerabilità critiche, l\"ampio numero di potential_stealer, e l'eccessiva esposizione dei servizi porta ad una situazione di estrema urgenza. Sono necessarie azioni immediate per mitigare i rischi, risolvere le vulnerabilità e migliorare la sicurezza generale del dominio \"cybersonar.demo\".",
-      "summary_text_en": "**Executive Summary of Vulnerability for \"cybersonar.demo\"**\n\nThe domain \"cybersonar.demo\" currently has a highly critical security situation, with a risk score of 99 out of 100, indicating an extremely dangerous situation with multiple severe vulnerabilities, significant data leakage, and/or excessive exposure of services. Immediate action is required.\n\n**Vulnerability:**\n- Total vulnerabilities detected: 162, with 2 active critical vulnerabilities, 18 high-level passive vulnerabilities, and a varied distribution of mid-level vulnerabilities (52 total, including 3 active), and 90 informational vulnerabilities. No low-level vulnerabilities were detected.\n\n**Exposure of Services:**\n- Significant exposure to services was identified across 102 total assets with 30 unique IPv4 and 23 IPv6 addresses. The most exposed ports include port 80 (68 instances), 443 (42 instances), as well as ports 8800, 53, 6697, 6667, and 8080 with varying numbers of exposures.\n\n**Data Leakage:**\n- Data leaks are substantial, with 1 data leak related to \"domain_stealer\" unresolved, 826 potentially dangerous data leaks (potential_stealer), and 11 other data leaks (other_stealer). There are no VIP or general data leaks detected.\n\n**Certificates and Technology:**\n- Certificate issues were found with 15 active and 18 expired certificates. This situation may pose additional risks to communication security.\n- Technology implementation includes security measures such as Web Application Firewall (WAF) on 4 assets, but no Content Delivery Network (CDN) is in use, increasing exposure to DDoS attacks and other Internet threats.\n\n**Email Security:**\n- Email security is vulnerable to spoofing, despite DMARC policy being set to \"quarantine.\" No blacklisting has been detected.\n\nThe combination of critical vulnerabilities, the large number of potential_stealers, and excessive exposure of services leads to an extremely urgent situation. Immediate actions are needed to mitigate risks, resolve vulnerabilities, and improve the overall security of the \"cybersonar.demo\" domain.",
+      "summary_text": "**Riepilogo Esecutivo della Vulnerabilità per \"cybersonar.demo\"**\n\nIl dominio \"cybersonar.demo\" attualmente presenta una situazione di sicurezza altamente critica...",
+      "summary_text_en": "**Executive Summary of Vulnerability for \"cybersonar.demo\"**\n\nThe domain \"cybersonar.demo\" currently has a highly critical security situation...",
       "risk_score": "99",
       "creation_date": "2024-03-07 18:08:41",
       "last_edit": "2024-03-08 14:09:44",
@@ -114,6 +114,106 @@
       },
       "unique_ipv4": 30,
       "unique_ipv6": 23
+    },
+    {
+      "idsummary": "a823e8f5-bc74-4e5b-ae74-8932e380ad9c",
+      "summary_text": "**Riepilogo Esecutivo della Vulnerabilità per \"example.com\"**\n\nIl dominio \"example.com\" attualmente presenta una situazione di sicurezza critica...",
+      "summary_text_en": "**Executive Summary of Vulnerability for \"example.com\"**\n\nThe domain \"example.com\" currently has a critical security situation...",
+      "risk_score": "15",
+      "creation_date": "2024-02-15 10:25:30",
+      "last_edit": "2024-02-15 16:15:00",
+      "domain_name": "example.com",
+      "servizi_esposti_score": 85,
+      "dataleak_score": 90,
+      "rapporto_leak_email_score": 60,
+      "spoofing_score": 65,
+      "open_ports_score": 2,
+      "blacklist_score": 80,
+      "vulnerability_score_active": 45,
+      "vulnerability_score_passive": 88,
+      "certificate_score": 58,
+      "n_port": {
+        "22": {
+          "n": 5
+        },
+        "80": {
+          "n": 45
+        },
+        "443": {
+          "n": 30
+        }
+      },
+      "n_cert_attivi": 10,
+      "n_cert_scaduti": 5,
+      "n_asset": 95,
+      "n_similar_domains": 7,
+      "email_security": {
+        "spoofable": "Spoofing possible.",
+        "dmarc_policy": "none",
+        "blacklist_detections": 2,
+        "blacklist_total_list": 100,
+        "blacklist_detected_list": ["example-blacklist.com", "test-blacklist.com"]
+      },
+      "n_dataleak": {
+        "total": {
+          "vip": 0,
+          "domain_stealer": 0,
+          "potential_stealer": 120,
+          "other_stealer": 3,
+          "general_leak": 0
+        },
+        "resolved": {
+          "vip": 0,
+          "domain_stealer": 0,
+          "potential_stealer": 0,
+          "other_stealer": 0,
+          "general_leak": 0
+        },
+        "unresolved": {
+          "vip": 0,
+          "domain_stealer": 0,
+          "potential_stealer": 120,
+          "other_stealer": 3,
+          "general_leak": 0
+        },
+        "enumeration": 1
+      },
+      "n_vulns": {
+        "total": {
+          "critical": 1,
+          "high": 10,
+          "medium": 30,
+          "low": 0,
+          "info": 54
+        },
+        "active": {
+          "critical": 1,
+          "high": 0,
+          "medium": 5,
+          "low": 0,
+          "info": 54
+        },
+        "passive": {
+          "critical": 0,
+          "high": 10,
+          "medium": 25,
+          "low": 0,
+          "info": 0
+        }
+      },
+      "waf": {
+        "count": 2,
+        "assets": [
+          "b74f76a9-cd27-42a7-a8bb-72e515dd5060",
+          "a7dfeeb0-9e0d-496f-b4e6-f36d98c2e8cf"
+        ]
+      },
+      "cdn": {
+        "count": 0,
+        "assets": []
+      },
+      "unique_ipv4": 18,
+      "unique_ipv6": 15
     }
   ]
 }
