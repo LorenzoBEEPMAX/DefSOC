@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import UploadFile from './../components/UploadFile/UploadFile';
 import SummaryTable from './../components/SummaryTable/SummaryTable';
-import axios from 'axios';
 import DisplayData from '../components/DisplayJSONData/DisplayJSONData';
 import Modal from 'react-modal'; // Importiamo react-modal
 import { Button } from '@mui/material'; // Importiamo il componente Button di MUI
+import DescriptionIcon from '@mui/icons-material/Description';  // Icona per il documento
+
 Modal.setAppElement('#root');
 
 function SummaryPage() {
@@ -12,30 +13,22 @@ function SummaryPage() {
   const [loading, setLoading] = useState(false);  // Stato per la gestione del caricamento
   const [isModalOpen, setIsModalOpen] = useState(false); // Stato per gestire l'apertura del modal
 
-  const handleFileUpload = async (file) => {
-    setLoading(true);
-
-    const formData = new FormData();
-    formData.append('file', file);
-
-    try {
-      const response = await axios.post('https://mlore97.pythonanywhere.com/api/upload/', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
-
-      // Supponiamo che la risposta contenga il report in formato JSON
-      const { data } = response;  // Assicurati che la risposta contenga i dati in formato JSON
-      setReport(data);  // Imposta i dati nel nostro stato
-
-      setLoading(false);  // Impostiamo lo stato di caricamento a false quando il file è stato elaborato
-    } catch (error) {
-      console.error('Error uploading file:', error);
-      setLoading(false);
-    }
+  // Funzione per gestire i dati del report dopo il caricamento del file
+  const handleFileUpload = (data) => {
+    setReport(data);  // Aggiorniamo lo stato con i dati ricevuti
   };
 
   return (
     <div className="container-full">
+        {report && (
+          <button
+          className="btn-fixed-riepilogofile"
+          onClick={() => setIsModalOpen(true)}
+        >
+          <DescriptionIcon />
+        </button>
+        )}
+
         <Modal
             isOpen={isModalOpen}
             onRequestClose={() => setIsModalOpen(false)}
@@ -44,15 +37,14 @@ function SummaryPage() {
             overlayClassName="modal-overlay"
         >
             <DisplayData data={report}/>
-            <Button onClick={() => setIsModalOpen(false)}>Close</Button>
+            <Button className="bg-danger text-white" onClick={() => setIsModalOpen(false)}>Chiudi</Button>
         </Modal>
+
       <h1>Security Report Viewer</h1>
-      <UploadFile onFileUpload={handleFileUpload} />
-      {report && (
-        <div className="w-100">
-            <Button variant="contained" color="primary" onClick={() => setIsModalOpen(true)}>Riepilogo del file</Button>
-        </div>
-      )}
+      <div className="d-flex flex-row justify-content-center align-items-center">
+        <UploadFile onFileUpload={handleFileUpload} /> {/* Passiamo la funzione di gestione al componente figlio */}
+        
+      </div>
       {loading ? (
         <p>Loading report...</p>
       ) : (

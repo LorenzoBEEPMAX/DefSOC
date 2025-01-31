@@ -36,9 +36,9 @@ code {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  width: 98%;
-  max-width: 98%;
-  max-height: 98%;
+  width: 90%;
+  max-width: 90%;
+  max-height: 95%;
   overflow-y: auto;
   transition: all 0.3s ease; 
 }
@@ -48,14 +48,6 @@ code {
   overflow:scroll;
 }
 
-.th-description {
-  max-height: 3px !important;
-  max-width:30px !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis;
-  white-space: nowrap; /* impedisce il wrapping del testo */
-  width: 100%; /* o la larghezza desiderata */
-}
 
 .table th {
   font-size: 12px;
@@ -79,16 +71,131 @@ code {
   background-color: #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;  /* Posizionamento per il testo dentro */
 }
 
+/* Barra di progresso colorata */
 .progress-bar {
   height: 100%;
   text-align: center;
   line-height: 20px;
-  color: rgb(0, 0, 0);
+  color: white;
   font-weight: bold;
   transition: width 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* La larghezza si adatta alla percentuale */
+}
+
+/* Testo centrato sulla barra */
+.progress-bar span {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-75%, -50%);
+  white-space: nowrap;
+  z-index: 1; /* Per fare in modo che il testo sia sempre sopra la barra */
+}
+
+/* Background della barra per mantenere visibile il testo anche a percentuali basse */
+.progress-bar-background {
+  position: absolute !important;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  
+  background-color: rgba(255, 255, 255, 0);  /* Colore semitrasparente per il testo */
+  z-index: 0; /* La "barretta" di supporto rimane dietro il testo */
 }
 
 
 
+
+.btn-fixed-riepilogofile {
+  position: fixed !important;
+  top: 20px;  /* distanza dall'alto */
+  right: 20px;  /* distanza dalla destra */
+  border-radius: 50%;  /* rende il pulsante tondo */
+  width: 60px;  /* larghezza del pulsante */
+  height: 60px;  /* altezza del pulsante */
+  min-width: 60px;  /* larghezza minima del pulsante */
+  background-color: #1976d2;  /* colore di sfondo (modifica come preferisci) */
+  color: white;  /* colore del testo (modifica come preferisci) */
+  display: flex;
+  justify-content: center;  /* centra l'icona orizzontalmente */
+  align-items: center;  /* centra l'icona verticalmente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* opzione di ombra per il pulsante */
+  z-index: 1000;  /* fa sì che il pulsante rimanga sopra ad altri contenuti */
+  padding: 0;
+  transition: background-color 0.3s ease;  /* transizione morbida per il cambiamento del colore di sfondo */
+}
+
+.btn-fixed-riepilogofile:hover {
+  background-color: #2e266e;  /* colore di sfondo al passaggio del mouse */
+}
+
+
+.bg-secondary {
+  background-color: #36304a !important
+}
+
+
+.pie-chart-container {
+  width: 20%;  /* La larghezza sarà del 100% rispetto al contenitore parent */
+  padding: 20px;  /* Aggiungi del padding per distanziare il grafico dai bordi */
+
+}
+
+/* Contenitore del grafico a barre */
+.bar-chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  margin: 20px 0;
+  padding: 10px;
+
+  height:100%;
+}
+
+.bar-chart-container h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333; /* Colore del testo per il titolo */
+  margin-bottom: 15px;
+}
+
+/* Stile per il canvas del grafico */
+.bar-chart-container canvas {
+  border-radius: 8px; /* Arrotonda gli angoli del canvas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge una leggera ombra */
+  width: 100% !important; /* Fa sì che il grafico occupi il 100% della larghezza del contenitore */
+  max-width: 800px; /* Imposta una larghezza massima per evitare che il grafico diventi troppo largo */
+  height: auto !important; /* Mantiene l'altezza del grafico proporzionale */
+}
+
+/* Impostazioni di stile per i tooltips */
+.chartjs-tooltip {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Opzionale: Personalizzare le etichette degli assi */
+.chartjs-axis-labels {
+  font-size: 14px;
+  color: #333;
+}
+
+.chartjs-axis-title {
+  font-size: 16px;
+  color: #666;
+  font-weight: bold;
+}
