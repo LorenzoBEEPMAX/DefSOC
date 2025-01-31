@@ -13,7 +13,7 @@ const UploadFile = ({ onFileUpload }) => {
     formData.append('file', file);
 
     // Supponiamo che l'API accetti l'upload del file su '/api/upload/'
-    axios.post('http://localhost:8000/api/upload/', formData)
+    axios.post('https://mlore97.pythonanywhere.com/api/upload/', formData)
       .then(response => {
         onFileUpload(file);  // Passiamo il file caricato al componente padre
       })

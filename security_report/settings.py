@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9r2b!$5ifx8cs-(kh&7g37raxq$pnp_l8yw(_)epdasbf1!h0%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mlore97.pythonanywhere.com']
 
 
 # Application definition
@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "https://def-soc-3mwd.vercel.app"
     ]
 
 ROOT_URLCONF = 'security_report.urls'

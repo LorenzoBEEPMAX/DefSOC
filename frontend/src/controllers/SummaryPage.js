@@ -19,7 +19,7 @@ function SummaryPage() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/upload/', formData, {
+      const response = await axios.post('https://mlore97.pythonanywhere.com/api/upload/', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
